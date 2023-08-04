@@ -8,28 +8,17 @@ export function AboutUs(){
     const [isSticky, setIsSticky] = useState(false);
   
     const elementRef = useRef(null);
-    const handleClick = () => {
-      
-    }
     useEffect(() => {
       
       const handleScroll = () => {
         const rect = elementRef.current.getBoundingClientRect();
-        console.log(rect);
-        if(rect.y < 1200 && rect.y > -100){
+        if(rect.y < 700 && rect.y > -100){
           setIsSticky(true);
         }
         else{
           setIsSticky(false);
         }
 
-        // const scrollTop = window.scrollY;
-        // console.log(scrollTop);
-        // if ((scrollTop > 3300 && scrollTop< 3800) || (scrollTop > 836 && scrollTop < 1300)) {
-        //   setIsSticky(true);
-        // } else {
-        //   setIsSticky(false);
-        // }
       };
       
       window.addEventListener("scroll", handleScroll);
@@ -41,7 +30,7 @@ export function AboutUs(){
     return(
         <div className='about-us-section'>
             <div className='about-us-h1'>
-                <h1 className={isSticky ? 'visible-elem' : 'none-visible-elem'} onClick={handleClick}>About us</h1>
+                <h1 className={isSticky ? 'visible-elem' : 'none-visible-elem'}>About us</h1>
             </div>
             <div ref={(elementRef)} className='about-us-content'>
                 <div>

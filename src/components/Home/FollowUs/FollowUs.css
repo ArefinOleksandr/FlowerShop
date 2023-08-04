@@ -1,0 +1,50 @@
+
+.follow-us-icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.follow-us-icons > div{
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px #121212 solid;
+
+}
+.follow-us-icons-h2{
+    border-bottom: 1px #121212 solid;
+    border-right: 1px #121212 solid;
+}
+
+.follow-us-icons-img{
+    height: 72px;
+    align-items: center;
+}
+.follow-us-icons-img > a > img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.follow-us-icons-img > a > img:hover{
+    transform: scale(1.2);
+    transition: all 0.1s;
+}
+
+
+
+@media (min-width: 992px){
+    .follow-us-section{
+        display: flex;
+        flex-direction: row;
+    }
+    .follow-us-section > div{
+        flex: 0 0 50%;
+    }
+    .follow-us-image{
+        width: 100%;
+    }
+    .follow-us-image > img {
+        width: 100%;
+    }
+}
