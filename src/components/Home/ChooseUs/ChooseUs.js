@@ -20,7 +20,6 @@ export function ChooseUs(){
             setIsVisible(false);
         }
         const scrollTop = window.scrollY;
-        console.log(scrollTop)
         if (scrollTop > 1900 && scrollTop< 2700) {
             setIsSticky(true);
         } else {
@@ -37,10 +36,10 @@ export function ChooseUs(){
     return (
         <div ref={(elementRef)} className='choose-us-section'>
             <div className={isVisible ? 'anim choose-us-h1' : 'none-anim choose-us-h1'}>
-               <div style={{position: isSticky ? 'sticky' : 'sticky',
-            bottom: isSticky ? 'auto' : '0'}}><h1 >
+               <h1 style={{position: isSticky ? 'sticky' : 'sticky',
+            bottom: isSticky ? 'auto' : '0'}}>
                 Why choose us ?
-                </h1></div> 
+                </h1>
             </div>
             <div className={isVisible ? 'anim' : 'none-anim'}>
                 <div>

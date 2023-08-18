@@ -12,7 +12,7 @@ export function AboutUs(){
       
       const handleScroll = () => {
         const rect = elementRef.current.getBoundingClientRect();
-        if(rect.y < 700 && rect.y > -100){
+        if(rect.y < 700 && rect.y > -200){
           setIsSticky(true);
         }
         else{
@@ -30,7 +30,11 @@ export function AboutUs(){
     return(
         <div className='about-us-section'>
             <div className='about-us-h1'>
-                <h1 className={isSticky ? 'visible-elem' : 'none-visible-elem'}>About us</h1>
+                <h1 className={isSticky ? 'visible-elem' : 'none-visible-elem'}
+                style={{
+                  position: 'sticky',
+                  bottom: isSticky ? 'auto' : '0'
+                }}>About us</h1>
             </div>
             <div ref={(elementRef)} className='about-us-content'>
                 <div>

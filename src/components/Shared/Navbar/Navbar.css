@@ -61,7 +61,7 @@
     /* Стилизация списка меню */
     
     /* Стилизация ссылок меню */
-    a{
+    .menu a{
         border-bottom: 1px solid #121212;
         display: block; /* из строчного в блочный */
         color: #121212;
@@ -78,9 +78,7 @@
         z-index: 0; /* выравнивание по центру */
     }
     /* Эффект наведения мыши на ссылки */
-    a:hover{
-        width: 100vw;
-    }
+    
     nav > div {
         display: flex;
         flex-direction: row;
@@ -106,10 +104,7 @@
         left: 0;
         z-index: 100;
         opacity: 1;
-    }
-    nav > div > div{
-        
-        
+        height: 11.5vh;
     }
 }
 

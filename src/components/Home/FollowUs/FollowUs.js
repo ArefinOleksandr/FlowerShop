@@ -19,8 +19,10 @@ export function FollowUS(){
                 <form action="" method="post">
                     <h1>Lets Talk</h1>
                     <p>We will call you back</p>
-                    <input type="tel" name="" id="" />
+                    <div>
+                    <input type="tel" name="" id="" placeholder='+380 XX XXX XX XX'/>
                     <button type="submit">REACH US</button>
+                    </div>
                 </form>
                 <div className='follow-us-contacts'>
                     <div className='follow-us-phone'>

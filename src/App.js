@@ -5,11 +5,16 @@ import { Navbar } from './components/Shared/Navbar/Navbar';
 import { Home } from './components/Home/Home';
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { Category } from './components/Category/Category';
 
 const router = createBrowserRouter([
   {
     path:'/',
     element:<Home />
+  },
+  {
+    path:'/category',
+    element: <Category />
   }
 ])
 
