@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Main.css';
 import '../../Shared/Animations/Animations.css';
@@ -68,22 +69,26 @@ function RightSection(){
             {
                 text: 'Dried Flowers',
                 img: driedFlowers,
-                id: 2 
+                id: 2,
+                url: 'dried_flowers'
             },
             {
                 text: 'Live Plants',
                 img: livePlants,
-                id: 3 
+                id: 3 ,
+                url: 'live_plants'
             },
             {
                 text: 'Aroma Candels',
                 img: aromaCandels,
-                id: 4 
+                id: 4 ,
+                url: 'aroma_candels'
             },
             {
                 text: 'Fresheners',
                 img: fresheners,
-                id: 5 
+                id: 5 ,
+                url: 'fresheners'
             }
         ]
     
@@ -94,9 +99,9 @@ function RightSection(){
                     <div className={'section-main' + ((item.id % 2 == 0) ? ' left-image' : ' right-image')}>
                         <div>
                             <h1>{item.text}</h1>
-                            <a href={'/category?category=' + item.url}>Shop now</a>
+                            <Link to={'/category?category=' + item.url}>Shop now</Link>
                         </div>
-                        <a href="#"><img src={item.img} alt="" /></a>
+                        <Link to={'/category?category=' + item.url}><img src={item.img} alt="" /></Link>
                     </div>
                 ))}
         </div>

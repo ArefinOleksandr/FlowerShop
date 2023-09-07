@@ -1,57 +1,133 @@
-main.category-main{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100vw;
-    margin-top: 5.6vw;
-}
-.image-section > img{
-    width: 50vw;
+
+.image-section > div > img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    filter: brightness(.5);
 }
 .image-section{
+    position: relative;
+    box-sizing: border-box;
     border: 1px #121212 solid;
+    display: flex;
+    justify-content: center;
 }
-.items-section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
-}
+
 div.items-section> a{
-    width: 25vw;
+    width: 100%;
     text-decoration: none;
 }
 div.items-section> a > div{
     position: relative;
-    height: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     padding: 24px;
-    border: 1px #121212 solid;
+    box-sizing: border-box;
+    border-right: 1px #121212 solid;
+    border-bottom: 1px #121212 solid;
 }
 div.items-section> a > div > h2, div.items-section> a > div > p{
     margin: 0;
 }
 div.items-section> a > div > h2{
     color: #121212;
+    z-index: 2;
 }
 div.items-section> a > div > p{
     color: #808080;
+    z-index: 2;
 }
 div.items-section > a > div > img{
-    width: 25vw;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+}
+div.items-section > a > div > img:hover{
+    transition: .5s all;
+    transform: scale(1.2);
 }
 
 
 .grid-first-column{
     grid-column: 1;
 }
-.grid-second-column{
-    grid-column:2;
+.image-section > div > h1{
+    color: #fff;
+    z-index: 2;
+    text-transform: capitalize;
+    margin-top: calc(55.92vw /2 ) ;
+}
+.image-section > div{
+    display: flex;
+    height: fit-content
+}
+
+
+@media (min-width: 992px) {
+    main.category-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        margin-top: 5.6vw;
+    }
+    div.items-section> a > div{
+        height: 25vw;
+    }
+    .items-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    .grid-second-column{
+        grid-column:2;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    main.category-main{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    div.items-section> a > div{
+        height: 50vw;
+    }
+    .items-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    .grid-second-column{
+        grid-column:2;
+    }
+    .image-section{
+        height: 65vw;
+    }
+}
+@media (max-width: 768px) {
+    main.category-main{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    div.items-section> a > div{
+        height: 100vw;
+    }
+    .items-section{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .items-section > img{
+        height: 100%;
+    }
+    
+    .image-section{
+        height: 112vw;
+
+    }
 }

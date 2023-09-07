@@ -18,6 +18,9 @@
     object-fit: cover;
     z-index: 1;
 }
+.img-scale-parrent{
+    overflow: hidden;
+}
 
 
 

@@ -6,6 +6,7 @@ import { Home } from './components/Home/Home';
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import { Category } from './components/Category/Category';
+import { Product } from './components/Product/Product';
 
 const router = createBrowserRouter([
   {
@@ -13,12 +14,17 @@ const router = createBrowserRouter([
     element:<Home />
   },
   {
-    path:'/category',
+    path: '/category',
     element: <Category />
+  },
+  {
+    path:'/item',
+    element: <Product />
   }
-])
+],{basename: '/FlowerShop'})
 
-function App() {
+function  App() {
+
   return (
     <React.StrictMode>
       <RouterProvider router={router} />

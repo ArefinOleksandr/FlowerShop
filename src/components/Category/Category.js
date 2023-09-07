@@ -1,84 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import {useLocation} from 'react-router-dom';
 import { Navbar } from '../Shared/Navbar/Navbar';
 import { Footer } from '../Shared/Footer/Footer';
 
+
 import './Category.css';
 
 import freshImage from '../../images/FreshImage.png';
+import { categorys } from '../Shared/Items/items.data';
 
-const categorys = {
-    fresh_flowers:[
-        {   
-            id: 1,
-            img: require('../../images/Items/SnowFail.jpg'),
-            name: 'Snow Fail',
-            price: 70
-        },
-        {   
-            id: 2,
-            img: require('../../images/Items/DownsDelight.png'),
-            name: 'Downs Delight',
-            price: 70
-        },
-        {   
-            id: 3,
-            img: require('../../images/Items/PinkElegance.png'),
-            name: 'PinkElegance',
-            price: 70
-        },
-        {   
-            id:4,
-            img: require('../../images/Items/RusticCharm.png'),
-            name: 'RusticCharm',
-            price: 70
-        },
-        {   
-            id: 5,
-            img: require('../../images/Items/AutumnSymphony.png'),
-            name: 'AutumnSymphony',
-            price: 70
-        },
-        {   
-            id: 6,
-            img: require('../../images/Items/RosyDelight.png'),
-            name: 'RosyDelight',
-            price: 70
-        },
-        {   
-            id: 7,
-            img: require('../../images/Items/Serenity.png'),
-            name: 'Serenity',
-            price: 70
-        },
-        {   
-            id: 8,
-            img: require('../../images/Items/BlueHarmony.png'),
-            name: 'BlueHarmony',
-            price: 70
-        },
-        {   
-            id: 9,
-            img: require('../../images/Items/MysticalMajesty.png'),
-            name: 'MysticalMajesty',
-            price: 70
-        },
-        {   
-            id: 10,
-            img: require('../../images/Items/BlazingBlossoms.png'),
-            name: 'BlazingBlossoms',
-            price: 70
-        },
-
-],
 
     
-}
 
-function ImageSection(){
+
+function ImageSection(props){
+    const category = props.category.replace(/_/g, " ");
+   
     return (
         <div className='image-section'>
-            <img src={freshImage} alt="" /><div></div>
+            <div>
+                
+            <img src={freshImage} alt="" />
+            <h1>{category}</h1>
+            </div>
         </div>
     )
 }
@@ -88,8 +34,8 @@ function ItemsSection(props){
         <div className='items-section'>
             {
                 categorys[props.category].map((item) => (
-                    <a href="#" className={!(item.id%2 == 0) ? 'grid-first-column' : 'grid-second-column'}>
-                        <div>
+                    <Link to={'/item?category='+props.category+'&&item='+item.url} className={!(item.id%2 == 0) ? 'grid-first-column' : 'grid-second-column'}>
+                        <div className='img-scale-parrent'>
                             <img
                                 style={{
                                     animation: 'img-scale 1s'
@@ -101,7 +47,7 @@ function ItemsSection(props){
                         </div>
                         
                         
-                    </a>
+                    </Link>
                 ))
             }
         </div>
@@ -121,7 +67,7 @@ export function Category(){
             <Navbar />
             <main className='category-main'>
 
-                <ImageSection />
+                <ImageSection category={category}/>
                 <ItemsSection category={category}/>
             </main>
             <Footer />
